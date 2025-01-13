@@ -1,6 +1,6 @@
 {
-  "name": "mern-project",
-  "version": "1.0.0",
+  "name": "create-react-app",
+  "version": "5.0.1",
   "main": "server.js",
   "type": "module",
   "scripts": {
@@ -10,15 +10,21 @@
   "keywords": [],
   "author": "Ayush",
   "license": "MIT",
-  "description": "",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "colors": "^1.4.0",
+    "create-react-app": "^5.0.1",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.9.3",
     "morgan": "^1.10.0",
-    "nodemon": "^3.1.9"
+    "nodemon": "^3.1.9",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "description": "",
+  "devDependencies": {
+    "web-vitals": "^4.2.4"
   }
 }
