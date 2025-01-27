@@ -1,3 +1,5 @@
+// Middleware file for the authorization jwt tokenization.
+
 import JWT from 'jsonwebtoken'
 import userModel from '../models/userModel.js'
 
@@ -18,7 +20,7 @@ export const requireSignIN= async(req, res, next) =>{
     }
 }
 
-//admin access
+//admin access - to check if the role is 1 or 0 for the admin access.
 export const isAdmin = async(req, res, next) => {
     try{
         const user = await userModel.findById(req.user._id)

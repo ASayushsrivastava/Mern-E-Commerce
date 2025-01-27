@@ -1,5 +1,7 @@
+// File for the About page in teh website
+
 import React from 'react'
-import Layout from '../components/layout/Layout.js'
+import Layout from '../components/layout/Layout.js' //wrapping header and footer components
 
 const About = () => {
     return (

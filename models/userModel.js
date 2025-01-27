@@ -1,3 +1,5 @@
+// the skeletal model for the database of the mongoDB.
+
 import mongoose from 'mongoose'
 
 const userSchema = new mongoose.Schema({

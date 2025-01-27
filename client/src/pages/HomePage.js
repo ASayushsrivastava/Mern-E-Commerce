@@ -1,3 +1,5 @@
+// File for the Hompage of the website.
+
 import React from 'react'
 import Layout from '../components/layout/Layout'
 

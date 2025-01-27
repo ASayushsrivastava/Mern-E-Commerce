@@ -1,3 +1,5 @@
+// bcrypt package password for additional security.
+
 import bcrypt from 'bcrypt';
 
 export const hashPassword = async(password) => {

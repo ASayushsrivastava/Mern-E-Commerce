@@ -1,7 +1,13 @@
+// this is the Layout file containing the Footer and Header file wrapped under it.
+
 import React from 'react'
-import Header from './Header.js'
-import Footer from './Footer.js'
-import {Helmet} from 'react-helmet'
+import Header from './Header.js'    //header component
+import Footer from './Footer.js'    //footer component
+import {Helmet} from 'react-helmet' //helmet is used for dynamic meta tags of the page.
+import {ToastContainer} from 'react-toastify';  //toast notification
+import 'react-toastify/dist/ReactToastify.css'; //styling for the toast notification
+
+// Layout passes the children of the header and footer component 
 
 const Layout = ({children,title,description,keywords,author}) => {
     return (
@@ -15,7 +21,8 @@ const Layout = ({children,title,description,keywords,author}) => {
                 <title>{title || Layout.defaultProps.title}</title>
             </Helmet>
             <Header />
-                <main style={{minHeight:'75vh'}}>
+                <main style={{minHeight:'70vh'}}>
+                    <ToastContainer/>
                     {children}
                 </main>
             <Footer />
@@ -23,6 +30,8 @@ const Layout = ({children,title,description,keywords,author}) => {
     )
 }
 
+
+//these are default props for helmet tags if description fails to be found, default values will be used.
 Layout.defaultProps = {
     title: 'Ecommerce App - Shop now',
     description: 'MERN Stack project - Ecommerce',

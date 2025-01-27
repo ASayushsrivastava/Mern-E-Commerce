@@ -1,3 +1,5 @@
+// routing for the endpoint of register and login.
+
 import express from 'express'
 import {registerController,loginController} from '../controllers/authController.js'
 import {requireSignIN, isAdmin} from '../middlewares/authMiddleware.js'

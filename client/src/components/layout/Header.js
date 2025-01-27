@@ -1,8 +1,12 @@
+// this is the file for Header file.
 import React from 'react'
 import { NavLink, Link } from 'react-router-dom'
 
+// NavLink is used to navigate through the website and routes because anchor tags cannot be used in the react application.
+// Link is used for the "navbar-brand" containing the title of the website.
 const Header = () => {
     return (
+        // navbar component using NavLink. 
         <>
                 <nav className="navbar navbar-expand-lg bg-body-tertiary">
     <div className="container-fluid">

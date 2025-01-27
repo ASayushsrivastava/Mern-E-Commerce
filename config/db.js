@@ -1,3 +1,5 @@
+// Connecting the database to the server, using mongoose with MongoDB.
+
 import mongoose from "mongoose";
 
 const connectDB = async() => {

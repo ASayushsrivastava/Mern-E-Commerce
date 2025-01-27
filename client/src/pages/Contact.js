@@ -1,7 +1,9 @@
-import React from 'react'
-import Layout from '../components/layout/Layout.js'
+// File for the Contact page in the website.
 
-const Contact = () => {
+import React from 'react'
+import Layout from '../components/layout/Layout.js'     //wrapping with the header and footer components
+
+const Contact = () => { 
 return (
     <Layout title={"Contact Us - Ecommerce Page"}>
         <div className='row contactus'>

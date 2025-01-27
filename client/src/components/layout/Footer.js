@@ -1,5 +1,9 @@
+//this is the Footer file.
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom' // link fron react-router-dom is used, because anchor tags are not used in react application.
+
+
+// This is footer component for the website used as a component to wrap the other pages.
 
 const Footer = () => {
 return (
