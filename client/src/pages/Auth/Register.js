@@ -56,7 +56,7 @@ const Register = () => {
             
             <form onSubmit={handleSubmit}>
                 <h4 className='title'>REGISTER FORM</h4> 
-                <div className="mb-3">
+                <div className="mb-1">
                     <label htmlFor='exampleInputName' className='form-label'>
                         Enter your Name
                     </label>
@@ -68,7 +68,7 @@ const Register = () => {
                     required/>
                 </div>
 
-                <div className="mb-3">
+                <div className="mb-1">
                     <label htmlFor='exampleInputEmail' className='form-label'>
                         Enter your Email
                     </label>
@@ -80,7 +80,7 @@ const Register = () => {
                     required/>
                 </div>
 
-                <div className="mb-3">
+                <div className="mb-1">
                     <label htmlFor='exampleInputPassword' className='form-label'>
                         Enter your Password
                     </label>
@@ -92,7 +92,7 @@ const Register = () => {
                     required/>
                 </div>
 
-                <div className="mb-3">
+                <div className="mb-1">
                     <label htmlFor='exampleInputPhone' className='form-label'>
                         Enter your Phone
                     </label>
@@ -104,7 +104,7 @@ const Register = () => {
                     required/>
                 </div>
 
-                <div className="mb-3">
+                <div className="mb-1">
                     <label htmlFor='exampleInputAddress' className='form-label'>
                         Enter your Address
                     </label>

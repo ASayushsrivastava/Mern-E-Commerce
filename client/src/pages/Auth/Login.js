@@ -5,9 +5,15 @@ import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 import "../../styles/AuthStyles.css";
 
+// importing custom hook for context
+import { useAuth } from "../../context/auth";
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+// creating varibale for the context auth
+const [auth,setAuth] = useAuth()
 
   const navigate = useNavigate();
 
@@ -21,6 +27,19 @@ const Login = () => {
       });
       if (res && res.data.success) {
         toast.success(res.data && res.data.message);
+        
+        // setting login values into the context before navigation
+        // getting user and token from response
+        setAuth({
+          ...auth,
+          user: res.data.user,
+          token: res.data.token,
+        })
+        
+        localStorage.setItem('auth',JSON.stringify(res.data))  // storing in local storage. 
+        
+        // navigate to home page
+
         navigate("/");
       } else {
         toast.error(res.data.message);

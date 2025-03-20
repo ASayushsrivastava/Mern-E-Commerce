@@ -14,7 +14,7 @@ h1{
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 70vh;
+  min-height: 75vh;
   flex-direction: column;
   background-color: #ffdee9;
   background-image: linear-gradient(0deg, #c85ae4 0%, #0dbcdb 100%);
