@@ -5,6 +5,7 @@ import { NavLink, Link } from 'react-router-dom'
 import { useAuth } from '../../context/auth'
 // importing toast notification
 import toast from 'react-hot-toast'
+import "../../styles/AuthStyles.css";
 
 
 
@@ -46,7 +47,8 @@ const Header = () => {
                     <li className="nav-item">
                     <NavLink to = "/login" className="nav-link" href="#">Login</NavLink>
                     </li>
-                    </>) : (<>
+                    </>) :
+                    (<>
                         <li className='nav-item dropdown'>
                             <NavLink className ='nav-link dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
                                 {auth?.user?.name}

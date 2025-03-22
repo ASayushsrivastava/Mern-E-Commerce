@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom' // link fron react-router-dom is used, b
 
 const Footer = () => {
 return (
-        <div className='footer fixed-bottom'>
+        <div className='footer sticky-bottom'>
             <h4 className='text-center'>All Rights are Reserved &copy; SriAyush</h4>
             <p className='text-center mt-3'>
             < Link to="/about">About</Link>
