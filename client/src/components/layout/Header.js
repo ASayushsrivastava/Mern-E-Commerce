@@ -31,7 +31,7 @@ const Header = () => {
         <span className="navbar-toggler-icon" />
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+        <ul className="navbar-nav ms-auto mb-2 mb-lg-0 ">
             <li className="nav-item">
             <NavLink to = "/" className="nav-link ">Home</NavLink>
             </li>
@@ -47,9 +47,15 @@ const Header = () => {
                     <NavLink to = "/login" className="nav-link" href="#">Login</NavLink>
                     </li>
                     </>) : (<>
-                        <li className="nav-item">
-                    <NavLink onClick={handleLogout} to = "/login" className="nav-link" href="#">Logout </NavLink>
-                    </li>
+                        <li className='nav-item dropdown'>
+                            <NavLink className ='nav-link dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                {auth?.user?.name}
+                            </NavLink>
+                            <ul className='dropdown-menu'>
+                                <li><NavLink to={`/dashboard/${auth?.user?.role === 1 ? "admin":"user" }`} className='dropdown-item' >Dashboard</NavLink></li>
+                                <li><NavLink onClick={handleLogout} to = "/login" className="dropdown-item" href="#">Logout </NavLink></li>
+                            </ul>
+                        </li>
                     </>)
             }
             <li className="nav-item">

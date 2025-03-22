@@ -13,7 +13,9 @@
   "author": "Ayush",
   "license": "MIT",
   "dependencies": {
+    "ant-design": "^1.0.0",
     "bcrypt": "^5.1.1",
+    "bootstrap-icons": "^1.11.3",
     "colors": "^1.4.0",
     "concurrently": "^9.1.2",
     "cors": "^2.8.5",

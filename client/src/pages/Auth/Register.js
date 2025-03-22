@@ -16,7 +16,9 @@ const Register = () => {
     const [password,setPassword] = useState('')
     const [phone,setPhone] = useState('')
     const [address,setAddress] = useState('')
+    const [answer,setAnswer] = useState('')
     const navigate = useNavigate()
+    const [visible, setVisible] = useState(false);
 
 
     // creating the custom function for onSubmit
@@ -25,9 +27,15 @@ const Register = () => {
         e.preventDefault()
 
         try{
-            const res = await axios.post('/api/v1/auth/register',{name,email,password,phone,address})   //send data to the server.
-            if(res.data.success){
-                toast.success(res.data.message)
+            const res = await axios.post('/api/v1/auth/register',{
+                name,
+                email,
+                password,
+                phone,
+                address,
+                answer})   //send data to the server.
+            if(res && res.data.success){
+                toast.success(res&& res.data.message)
                 navigate('/login')      //redirect to the login page.
             }
             else{
@@ -58,61 +66,81 @@ const Register = () => {
                 <h4 className='title'>REGISTER FORM</h4> 
                 <div className="mb-1">
                     <label htmlFor='exampleInputName' className='form-label'>
-                        Enter your Name
                     </label>
                     <input value={name} 
                     onChange={(e) => setName(e.target.value)}
                     type='text' 
                     className='form-control' 
                     id='exampleInputName'
+                    placeholder='Enter your Name'
                     required/>
                 </div>
 
                 <div className="mb-1">
                     <label htmlFor='exampleInputEmail' className='form-label'>
-                        Enter your Email
+                        
                     </label>
                     <input value={email}
                     onChange={(e) => setEmail(e.target.value)} 
                     type='email' 
                     className='form-control' 
                     id='exampleInputEmail'
+                    placeholder='Enter your Email'
                     required/>
                 </div>
 
-                <div className="mb-1">
+                <div className="mt-4 mb-1 d-flex">
                     <label htmlFor='exampleInputPassword' className='form-label'>
-                        Enter your Password
+                        
                     </label>
                     <input value={password}
                     onChange={(e) => setPassword(e.target.value)} 
-                    type='password' 
+                    type={visible ? "text":"password"} 
                     className='form-control' 
                     id='exampleInputPassword'
+                    placeholder='Enter your Password'
                     required/>
+                    <span className="input-group-text " onClick={() => setVisible(!visible)}>
+                        <i className={visible ? "bi bi-eye-slash" : "bi bi-eye"} />
+                    </span>
                 </div>
 
                 <div className="mb-1">
                     <label htmlFor='exampleInputPhone' className='form-label'>
-                        Enter your Phone
+                        
                     </label>
                     <input value={phone} 
                     onChange={(e) => setPhone(e.target.value)}
                     type='text' 
                     className='form-control' 
                     id='exampleInputPhone'
+                    placeholder='Enter your Phone'
                     required/>
                 </div>
 
                 <div className="mb-1">
                     <label htmlFor='exampleInputAddress' className='form-label'>
-                        Enter your Address
+                        
                     </label>
                     <input value={address} 
                     onChange={(e) => setAddress(e.target.value)}
                     type='text' 
                     className='form-control' 
                     id='exampleInputAddress'
+                    placeholder='Enter your Address'
+                    required/>
+                </div>
+
+                <div className="mb-1">
+                    <label htmlFor='exampleInputEmail' className='form-label'>
+                        
+                    </label>
+                    <input value={answer} 
+                    onChange={(e) => setAnswer(e.target.value)}
+                    type='text' 
+                    className='form-control' 
+                    id='exampleInputEmail'
+                    placeholder='Enter your favourite show'
                     required/>
                 </div>
 

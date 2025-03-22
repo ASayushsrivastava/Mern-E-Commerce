@@ -64,3 +64,20 @@ h1{
     #000000
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
+/* Make the span (eye icon) match input field styles */
+.input-group-text {
+  border: none; /* Remove default Bootstrap border */
+  border-bottom: 1px solid #000000; /* Match input field bottom border */
+  background: transparent !important; /* Remove background */
+  padding: 0.375rem 0.75rem; /* Keep spacing consistent */
+  cursor: pointer; /* Make it clickable */
+  display: flex;
+  align-items: center;
+  border-radius: 0;
+}
+
+/* Remove default focus styles */
+.input-group-text:focus {
+  box-shadow: none;
+}

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Layout from "./../../components/layout/Layout";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 import "../../styles/AuthStyles.css";
 
@@ -11,11 +11,13 @@ import { useAuth } from "../../context/auth";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [visible, setVisible] = useState(true);
 
 // creating varibale for the context auth
 const [auth,setAuth] = useAuth()
 
   const navigate = useNavigate();
+  const location = useLocation()
 
   // form function
   const handleSubmit = async (e) => {
@@ -40,7 +42,7 @@ const [auth,setAuth] = useAuth()
         
         // navigate to home page
 
-        navigate("/");
+        navigate(location.state||"/");
       } else {
         toast.error(res.data.message);
       }
@@ -66,9 +68,9 @@ const [auth,setAuth] = useAuth()
               required
             />
           </div>
-          <div className="mb-3">
+          <div className="mb-3 d-flex ">
             <input
-              type="password"
+              type={visible ? "text":"password"}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="form-control"
@@ -76,11 +78,25 @@ const [auth,setAuth] = useAuth()
               placeholder="Enter Your Password"
               required
             />
+            <span className="input-group-text " onClick={() => setVisible(!visible)}>
+              <i className={visible ? "bi bi-eye-slash" : "bi bi-eye"} />
+            </span>
           </div>
 
-          <button type="submit" className="btn btn-primary">
-            LOGIN
-          </button>
+          <div className="mb-3 d-flex">
+            <button type="submit" className="btn btn-primary mx-1" onClick={()=> {navigate('/forgot-password')}}>
+              Forgot Password
+            </button>
+            <button type="submit" className="btn btn-primary mx-1" onClick={()=> {navigate('/register')}}>
+              Register
+            </button>
+          
+          </div>
+
+          <button type="submit" className="btn btn-primary w-100">
+              LOGIN
+            </button>
+          
         </form>
       </div>
     </Layout>
