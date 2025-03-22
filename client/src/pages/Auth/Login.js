@@ -11,7 +11,7 @@ import { useAuth } from "../../context/auth";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
 
 // creating varibale for the context auth
 const [auth,setAuth] = useAuth()
