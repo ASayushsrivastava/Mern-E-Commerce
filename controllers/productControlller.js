@@ -4,7 +4,7 @@ import fs from 'fs'
 
 export const createProductController=async(req,res)=>{
     try{
-        const {name,slug,description,price,category,quantity,shipping}=req.fields
+        const {name,description,price,category,quantity,shipping}=req.fields;
         const {photo} = req.files
         //validation - switch statement
         switch(true){
@@ -138,6 +138,24 @@ export const productPhotoController =async(req,res)=>{
         res.status(500).send({
             success:false,
             message:"Error in getting product photo",
+            err
+        })
+    }
+}
+
+// delete product 
+export const deleteProductController=async(req,res)=>{
+    try{
+        await productModel.findByIdAndDelete(req.params.id).select("-photo")
+        res.status(200).send({
+            success: true,
+            message: 'Product deleted successfully',
+        })
+    }catch(e){
+        console.log(e)
+        res.status(500).send({
+            success: false,
+            message: 'Error in deleting product',
             err
         })
     }
